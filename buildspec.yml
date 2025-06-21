@@ -10,7 +10,10 @@ phases:
       - echo Zipping Lambda function...
       - cd lambda_function
       - zip -r ../lambda.zip .
+      - cd ..
   post_build:
     commands:
       - echo Deploying to Lambda...
+      - ls -lah
+      - echo "Trying to update Lambda with lambda.zip..."
       - aws lambda update-function-code --function-name resizeImageLambda --zip-file fileb://lambda.zip
