@@ -2,8 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      python: 3.11
     commands:
       - echo Installing dependencies...
       - pip install -r lambda_function/requirements.txt -t lambda_function/
@@ -15,9 +13,4 @@ phases:
   post_build:
     commands:
       - echo Deploying to Lambda...
-      - aws lambda update-function-code --function-name resizeImageLambda --zip-file fileb://lambda_function/lambda.zip
-
-
-artifacts:
-  files:
-    - lambda.zip
+      - aws lambda update-function-code --function-name resizeImageLambda --zip-file fileb://lambda.zip
