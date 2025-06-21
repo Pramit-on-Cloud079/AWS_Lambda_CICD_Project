@@ -6,7 +6,7 @@ pipeline_name = "LambdaCICDPipeline"
 github_owner = "Pramit-on-Cloud079"
 repo_name = "AWS_Lambda_CICD_Project"
 branch_name = "master"  # or 'main' if your repo uses that
-github_token = "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"  # Create a GitHub personal access token (classic)
+github_token = "xxxxxxxxxxxxxxx"  # Create a GitHub personal access token (classic)
 
 response = codepipeline.create_pipeline(
     pipeline={
